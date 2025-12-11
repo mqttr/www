@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tiu$t*)cnqex7s_k0^bvs=9m_v)rr2dt-ikoupzd5ok=&)vqa0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'FALSE') == 'TRUE'
+DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
 ALLOWED_HOSTS = [os.environ.get('DOMAIN', 'localhost')]
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mainsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,3 +116,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+

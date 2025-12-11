@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang='en'>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div id='side_bar' class='minimized' hx-get='/components/sidebar.html' hx-trigger='load' hx-target='this' hx-swap='outerHTML'></div>
+        <div id="content">
+            <h1>Matthew Roland</h1>
+            <hr>
+            <p>Welcome to my website! Everything you see so far has been made by my hands. All of the CSS, HTML, Hyperscript, HTMX, icons, and design were written and/or designed by yours truly!</p>
+            <p>Now, in my defense, I am not a front end developer. Regardless, there's nothing more here. Feel free to navigate away by going to the <button _='on click send click to toggle_side_bar'>Navigation Station</button>.</p>
+            <p>If you want to view my projects, eventually they're be in the <button _='on click send click to toggle_side_bar'>Navigation Station</button>, but for right now: <a href="https://go.mro.land/github" target="_blank">Here's my GitHub</p>
+        </div>
+    </body>
+</html>
+
