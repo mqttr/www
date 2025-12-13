@@ -1,21 +1,21 @@
 FROM python:3.13-slim AS builder
 
-WORKDIR /app
+WORKDIR /mainsite
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 RUN pip install --upgrade pip
 
-COPY requirements.txt /app/
+COPY requirements.txt /mainsite/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 FROM python:3.13-slim
 
 RUN useradd -m -r appuser && \
-    mkdir /app && \
-    chown -R appuser /app
+    mkdir /mainsite /static && \
+    chown -R appuser /mainsite /static
 
 COPY --from=builder \
     /usr/local/lib/python3.13/site-packages/ \
@@ -24,18 +24,18 @@ COPY --from=builder \
     /usr/local/bin/ \
     /usr/local/bin/
 
-WORKDIR /app/
-
-COPY --chown=appuser:appuser mainsite /app/mainsite
-COPY --chown=appuser:appuser templates /app/templates
-COPY --chown=appuser:appuser components /app/components
+COPY --chown=appuser:appuser mainsite /mainsite
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
+
+COPY --chown=appuser:appuser start.sh start.sh
+COPY --chown=appuser:appuser manage.py manage.py
+RUN chmod u+x start.sh
 
 USER appuser
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "mainsite.wsgi:application"]
+CMD ["/start.sh"]
 
