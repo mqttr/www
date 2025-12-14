@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainsite',
+    'tailwind',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -110,6 +111,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+TAILWIND_APP_NAME = "theme"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -121,9 +123,5 @@ STORAGES = {
 }
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static/',
-]
+STATIC_ROOT = BASE_DIR / 'static'
 
