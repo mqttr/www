@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
 ]
+if DEBUG:
+    INSTALLED_APPS += ["django_browser_reload"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,6 +73,10 @@ TEMPLATES = [
         },
     },
 ]
+if DEBUG:
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+    ]
 
 WSGI_APPLICATION = 'mainsite.wsgi.application'
 
