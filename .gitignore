@@ -1,2 +1,6 @@
-files/
+__pycache__/
+
+*.sqlite3
+static/
+Procfile.tailwind
 

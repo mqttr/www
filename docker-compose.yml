@@ -1,0 +1,9 @@
+services:
+  mainsite:
+    build: .
+    container_name: mainsite
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./db.sqlite3:/db.sqlite3
+
