@@ -2,6 +2,8 @@ services:
   mainsite:
     build: .
     container_name: mainsite
+    environment:
+      - DEBUG=${DEBUG:-false}
     ports:
       - "8000:8000"
     volumes:

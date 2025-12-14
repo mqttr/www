@@ -23,6 +23,7 @@ COPY --from=installer \
 
 COPY manage.py /app/manage.py
 COPY mainsite /app/mainsite/
+COPY components /app/components
 COPY theme /app/theme
 RUN python manage.py tailwind install --no-package-lock
 RUN python manage.py tailwind build
@@ -52,6 +53,9 @@ COPY --from=builder \
 COPY --from=builder \
     --chown=appuser:appuser \
     /app/static /app/static
+COPY --from=builder \
+    --chown=appuser:appuser \
+    /app/components /app/components
 
 USER appuser
 
