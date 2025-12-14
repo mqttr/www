@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.conf import settings
+from django.http import HttpResponse
 
 from mainsite import views
+
 urlpatterns = [
-    path('', views.index)
+    path("", views.index),
+    path("", include("django_components.urls")),
 ]
+
 if settings.DEBUG:
     # Include django_browser_reload URLs only in DEBUG mode
     urlpatterns += [

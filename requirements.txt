@@ -3,6 +3,7 @@ Django==6.0
 django_components==0.143.2
 django-tailwind==4.4.2
 django_browser_reload==1.21.0
+django_components==0.143.2
 gunicorn==23.0.0
 whitenoise==6.11.0
 
