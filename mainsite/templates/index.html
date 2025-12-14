@@ -1,13 +1,15 @@
 {% load static tailwind_tags %}
+{% load component_tags %}
 <!doctype html>
-<html lang='en' class="h-full">
+<html lang='en' class="h-full min-h-full">
     <head>
         <title>Home</title>
         <meta charset="UTF-8" />
         {% tailwind_css %}
     </head>
-    <body class="h-full">
-        <main class="grid min-h-full place-items-center bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+    <body class="bg-gray-900 flex flex-col h-screen justify-between">
+        {% component "header" / %}
+        <main class="grid min-h-fit place-items-center px-6 py-24 sm:py-32 lg:px-8">
             <div class="text-center">
 
                 <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Matthew Roland's Site</h1>
@@ -18,6 +20,7 @@
                 </div>
             </div>
         </main>
+        {% component "footer" / %}
     </body>
 </html>
 
