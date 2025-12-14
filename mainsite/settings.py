@@ -24,7 +24,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-tiu$t*)cnqex7s_k0^bvs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
-ALLOWED_HOSTS = [os.environ.get('DOMAIN', 'localhost')]
+if domain := os.environ.get('DOMAIN'):
+    ALLOWED_HOSTS = [domain]
+else:
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -63,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mainsite.vars.global_vars'
             ],
         },
     },

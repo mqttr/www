@@ -1,19 +1,22 @@
 {% load static tailwind_tags %}
 <!doctype html>
-<html lang='en'>
+<html lang='en' class="h-full">
     <head>
         <title>Home</title>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% tailwind_css %}
     </head>
-    <body>
-        <div id="main">
-            <h1>Matthew's Site</h1>
-            <hr>
-            <p>Welcome to my personal website! Currently, this is a work in progress. Please forgive any weirdness.</p>
-            <p>There's not too much going on here, so I recommend in the meantime to check out <a href="https://github.com/mqttr" target="_blank">my GitHub</a></p>
-        </div>
+    <body class="h-full">
+        <main class="grid min-h-full place-items-center bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+            <div class="text-center">
+                <h1 class="mt-4 text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Matthew Roland</h1>
+                <p class="mt-10 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Welcome to my personal website! This is currently a work in progress. Please forgive any weirdness.</p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="{{ LINK.GITHUB }}" target="_blank" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">GitHub</a>
+                    <a href="{{ LINK.LINKED_IN }}" target="_blank" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">LinkedIn</a>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
 
