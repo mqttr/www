@@ -8,7 +8,6 @@ RUN pip install --upgrade pip
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-
 FROM ${BASE_IMAGE} AS builder
 WORKDIR /app
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -21,10 +20,7 @@ COPY --from=installer \
     /usr/local/bin/ \
     /usr/local/bin/
 
-COPY manage.py /app/manage.py
-COPY mainsite /app/mainsite/
-COPY components /app/components
-COPY theme /app/theme
+COPY . .
 RUN python manage.py tailwind install --no-package-lock
 RUN python manage.py tailwind build
 RUN python manage.py collectstatic --no-input
@@ -45,17 +41,8 @@ COPY --from=installer \
     /usr/local/bin/ \
     /usr/local/bin/
 COPY --from=builder \
-    --chown=appuser:appuser \
-    /app/mainsite /app/mainsite
-COPY --from=builder \
-    --chown=appuser:appuser \
-    /app/theme /app/theme
-COPY --from=builder \
-    --chown=appuser:appuser \
-    /app/static /app/static
-COPY --from=builder \
-    --chown=appuser:appuser \
-    /app/components /app/components
+    --exclude=manage.py \
+    /app /app
 
 USER appuser
 

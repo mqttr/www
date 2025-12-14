@@ -1,0 +1,10 @@
+.git*
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+README.md
+static/
+Procfile.tailwind
+*.sqlite3
+
