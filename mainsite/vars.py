@@ -11,6 +11,9 @@ def global_vars(_):
         'LINK': {
             'GITHUB': r'https://github.com/mqttr',
             'LINKED_IN': r'https://www.linkedin.com/in/matthew-roland/',
+            'SELFHOSTED': {
+                'VERSION_CONTROL_SYSTEM': f'https://www.git.{DOMAIN}',
+                }
         },
     }
 
