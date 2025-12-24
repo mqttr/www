@@ -9,6 +9,7 @@ def global_vars(_):
             'CONTACT': f'contact@{DOMAIN}',
         },
         'LINK': {
+            'DOMAIN': f'https://{DOMAIN}',
             'GITHUB': r'https://github.com/mqttr',
             'LINKED_IN': r'https://www.linkedin.com/in/matthew-roland/',
             'SELFHOSTED': {

@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.conf import settings
-from django.http import HttpResponse
 
 from mainsite import views
 
 urlpatterns = [
     path("", views.index),
     path("", include("django_components.urls")),
+    path("about", views.about),
+    path("projects", views.projects),
+    path("resume", views.resume),
 ]
 
 if settings.DEBUG:
