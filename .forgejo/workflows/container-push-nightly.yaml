@@ -1,0 +1,29 @@
+name: Build and Push Container with nightly tag on any push to non-main branch
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+
+jobs:
+  build-and-push-latest:
+    runs-on: docker
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: git.mro.land
+          username: ${{ secrets.CONTAINER_REGISTRY_USER }}
+          password: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: git.mro.land/${{ forgejo.repository }}:nightly
+
