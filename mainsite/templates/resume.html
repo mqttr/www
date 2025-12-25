@@ -5,9 +5,53 @@
 {% endblock %}
 
 {% block content %}
-            <div class="text-center">
-                <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Matthew Roland's Resume</h1>
-                <p class="mt-10 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Welcome to my personal website! This is currently a work in progress. Please forgive any oddities.</p>
-            </div>
+    <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-balance text-white sm:text-7xl">My Experience</h1>
+        <p class="mt-1 text-sm font-normal text-gray-200 sm:text-xl/8">
+            <a href="mailto:{{EMAIL.JOB}}?subject=Job%20offer" class="underline">{{EMAIL.JOB}}</a> |
+            <a href="/" class="underline">{{DOMAIN}}</a> |
+            <a href="{{LINK.GITHUB}}" class="underline">GitHub</a> |
+            <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">Forgejo</a> |
+            <a href="{{LINK.LINKED_IN}}" class="underline">Linked In</a>
+        </p>
+        <hr class="text-gray-600 mb-1 max-w-2/3 mx-auto">
+        <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-200 sm:text-4xl">Formal Education</h2>
+        <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
+        <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
+            <span class="text-sm font-normal text-gray-400">Aug 2022 - Dec 2025</span>
+            <p class="mt-2 text-lg font-normal text-gray-200 sm:text-xl/8">
+                <span class="font-bold">Bachelor of Science</span>,
+                Major in <span class="font-bold">Cybersecurity</span>,
+                Minors in <span class="font-bold">Computer Science</span> and <span class="font-bold">Mathematics</span>
+            </p>
+            <p class="mx-auto mt-2 text-lg font-normal text-gray-200 sm:text-xl/8 max-w-2/3">
+                <span class="font-bold">Relevant course work:</span><br>
+                <a href="https://catalog.unomaha.edu/search/?search=CYBR+4540" target="_blank" class="underline">
+                    Computer Security Management</a>,
+                <a href="https://catalog.unomaha.edu/search/?search=CYBR+4430" target="_blank" class="underline">
+                    Quantum Computing and Cryptography</a>,
+                <a href="https://catalog.unomaha.edu/search/?search=CSCI+1620" target="_blank" class="underline">
+                    Computer Science 1 & 2 (Python)</a>,
+                <a href="https://catalog.unomaha.edu/search/?search=CSCI+4650" target="_blank" class="underline">
+                    Introduction to Cloud Computing</a>,
+                <a href="https://catalog.unomaha.edu/search/?search=MATH+4560" target="_blank" class="underline">
+                    Number Theory & Cryptography</a>
+            </p>
+        <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Professional Experience</h2>
+        <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
+        <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">Union Pacific Railroad, Omaha, Ne<h3>
+            <span class="text-xl font-normal text-gray-300">Technoloygy Intern</span><br>
+            <span class="text-sm font-normal text-gray-400">June 2024 - Dec 2025</span>
+        <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
+            <span class="text-xl font-normal text-gray-300">Teacher Assistant for Computer Science 2: Tutor & Grader</span><br>
+            <span class="text-sm font-normal text-gray-400">Aug 2023 - Dec 2025</span>
+        <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
+            <span class="text-xl font-normal text-gray-300">Student Assistant at the Creative Production Lab</span><br>
+            <span class="text-sm font-normal text-gray-400">Jan 2023 - July 2024</span>
+        <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Projects & extracurricular</h2>
+        <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
+        <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Skills</h2>
+        <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
+    </div>
 {% endblock %}
 

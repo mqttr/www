@@ -6,6 +6,7 @@ def global_vars(_):
         'DOMAIN': DOMAIN,
         'EMAIL': {
             'SUFFIX': f'@{DOMAIN}',
+            'JOB': f'job@{DOMAIN}',
             'CONTACT': f'contact@{DOMAIN}',
         },
         'LINK': {
