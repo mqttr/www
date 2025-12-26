@@ -11,7 +11,7 @@ jobs:
     runs-on: docker
     steps:
       - name: Local container push
-        uses: git.mro.land/actions/local-container-push
+        uses: git.mro.land/actions/local-container-push@v1
         with:
           tag: nightly
           username: ${{ secrets.CONTAINER_REGISTRY_USER }}
