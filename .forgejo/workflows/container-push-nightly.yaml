@@ -7,23 +7,13 @@ on:
       - '!main'
 
 jobs:
-  build-and-push-latest:
+  build-and-push-nightly:
     runs-on: docker
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Log in to the Container registry
-        uses: docker/login-action@v3
+      - name: Local container push
+        uses: git.mro.land/actions/local-container-push
         with:
-          registry: git.mro.land
+          tag: nightly
           username: ${{ secrets.CONTAINER_REGISTRY_USER }}
           password: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: git.mro.land/${{ forgejo.repository }}:nightly
 
