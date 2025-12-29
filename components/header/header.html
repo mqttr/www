@@ -3,13 +3,13 @@
         <a href="/" class="hover:underline test-sm text-body sm:text-center">{{DOMAIN}}</a>
         <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-body sm:mt-0">
             <li>
-                <a href="/resume" class="hover:underline me-4 md:me-6">Resume</a>
+                <a href="{% url 'resume' %}" class="hover:underline me-4 md:me-6">Resume</a>
             </li>
             <li>
-                <a href="/projects" class="hover:underline me-4 md:me-6">Projects</a>
+                <a href="{% url 'projects:' %}" class="hover:underline me-4 md:me-6">Projects</a>
             </li>
             <li>
-                <a href="/about" class="hover:underline">About</a>
+                <a href="{% url 'about' %}" class="hover:underline">About</a>
             </li>
         </ul>
     </div>

@@ -20,11 +20,11 @@ from django.conf import settings
 from mainsite import views
 
 urlpatterns = [
-    path("", views.index),
+    path("", views.home, name="home"),
     path("", include("django_components.urls")),
-    path("about", views.about),
-    path("projects", views.projects),
-    path("resume", views.resume),
+    path("about", views.about, name="about"),
+    path("projects/", include("projects.urls")),
+    path("resume", views.resume, name="resume"),
 ]
 
 if settings.DEBUG:

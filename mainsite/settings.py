@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainsite',
+
     'django_components',
     'pygmentify',
+
+    'mainsite',
     'tailwind',
     'theme',
+    'projects',
 ]
 if DEBUG:
     INSTALLED_APPS += ["django_browser_reload"]
@@ -63,7 +66,7 @@ ROOT_URLCONF = 'mainsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [ BASE_DIR / 'templates'],
         'OPTIONS': {
             'loaders':[(
                 'django.template.loaders.cached.Loader', [
