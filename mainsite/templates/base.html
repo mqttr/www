@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 <html lang='en' class="h-full min-h-full">
     <head>
-        {% block title %}
-        <title>CHANGE ME</title>
-        {% endblock %}
+        <title>{% block title %}CHANGE ME{% endblock %}</title>
         <meta charset="UTF-8" >
         {% tailwind_css %}
         {% block add_css %}{% endblock %}

@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% load pygmentify_tags %}
 
-{% block title %}
-    <title>My projects</title>
-{% endblock %}
+{% block title %}My projects{% endblock %}
+
 {% block add_css %}
     <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
 {% endblock %}
