@@ -16,15 +16,17 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.conf import settings
+from django.views.generic import TemplateView
 
 from mainsite import views
 
 urlpatterns = [
-    path("", views.home, name="home"),
-    path("", include("django_components.urls")),
-    path("about", views.about, name="about"),
+# Root Paths
+    path("", TemplateView.as_view(template_name='home.html'), name="home"),
+    path("about", TemplateView.as_view(template_name='about.html'), name="about"),
+    path("resume", TemplateView.as_view(template_name='resume.html'), name="resume"),
+# Installed Apps Paths
     path("projects/", include("projects.urls")),
-    path("resume", views.resume, name="resume"),
 ]
 
 if settings.DEBUG:
