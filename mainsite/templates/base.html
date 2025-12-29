@@ -6,8 +6,9 @@
         {% block title %}
         <title>CHANGE ME</title>
         {% endblock %}
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8" >
         {% tailwind_css %}
+        {% block add_css %}{% endblock %}
     </head>
     <body class="bg-gray-900 flex flex-col h-screen justify-between">
         {% component "header" / %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainsite',
     'django_components',
+    'pygmentify',
     'tailwind',
     'theme',
 ]
