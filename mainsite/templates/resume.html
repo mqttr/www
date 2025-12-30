@@ -3,9 +3,9 @@
 {% block title %}Resume{% endblock %}
 
 {% block content %}
-<div class="text-center md:max-w-max lg:max-w-4/5">
-    <h1 class="text-4xl font-bold tracking-tight text-balance text-white sm:text-7xl">My Experience</h1>
-    <p class="mt-1 text-sm font-normal text-gray-200 sm:text-xl/8">
+<div class="text-center md:max-w-max lg:max-w-4/5 text-gray-300 text-lg">
+    <h1 class="text-6xl font-bold tracking-tight text-balance text-white">My Experience</h1>
+    <p class="mt-1 text-md font-normal text-gray-500">
         <a href="mailto:{{EMAIL.JOB}}?subject=Job%20offer" class="underline">{{EMAIL.JOB}}</a> |
         <a href="/" class="underline">{{DOMAIN}}</a> |
         <a href="{{LINK.GITHUB}}" class="underline">GitHub</a> |
@@ -13,43 +13,104 @@
         <a href="{{LINK.LINKED_IN}}" class="underline">Linked In</a>
     </p>
     <hr class="text-gray-600 mb-1 max-w-2/3 mx-auto">
-    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-200 sm:text-4xl">Formal Education</h2>
+    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-200">Formal Education</h2>
+    <hr class="text-gray-600 max-w-1/2 mx-auto">
+    <h3 class="text-3xl font-semibold tracking-tight sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
+    <span class="text-sm font-normal text-gray-400">Aug 2022 - Dec 2025</span>
+    <p class="mt-2 text-lg text-gray-200 sm:text-xl/8">
+        <span class="font-bold">Bachelor of Science</span>
+        <br>
+        Major in <span class="font-bold">Cybersecurity</span>
+        <br>
+        Minors in <span class="font-bold">Computer Science</span> &amp; <span class="font-bold">Mathematics</span>
+    </p>
+    <h4 class="text-lg text-gray-200 mt-4 font-bold">Relevant course work</h4>
+    <p class="mx-auto text-xl text-gray-100 sm:text-xl/8 max-w-1/2">
+        <a href="https://catalog.unomaha.edu/search/?search=CYBR+4540" target="_blank" class="underline">
+            Computer Security Management</a>,
+        <a href="https://catalog.unomaha.edu/search/?search=CYBR+4430" target="_blank" class="underline">
+            Quantum Computing and Cryptography</a>,
+        <a href="https://catalog.unomaha.edu/search/?search=CSCI+1620" target="_blank" class="underline">
+            Computer Science 1 & 2 (Python)</a>,
+        <a href="https://catalog.unomaha.edu/search/?search=CSCI+4650" target="_blank" class="underline">
+            Introduction to Cloud Computing</a>,
+        <a href="https://catalog.unomaha.edu/search/?search=MATH+4560" target="_blank" class="underline">
+            Number Theory & Cryptography</a>
+    </p>
+
+    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance">Professional Experience</h2>
     <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
-    <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
-        <span class="text-sm font-normal text-gray-400">Aug 2022 - Dec 2025</span>
-        <p class="mt-2 text-lg font-normal text-gray-200 sm:text-xl/8">
-            <span class="font-bold">Bachelor of Science</span>,
-            Major in <span class="font-bold">Cybersecurity</span>,
-            Minors in <span class="font-bold">Computer Science</span> and <span class="font-bold">Mathematics</span>
-        </p>
-        <p class="mx-auto mt-2 text-lg font-normal text-gray-200 sm:text-xl/8 max-w-2/3">
-            <span class="font-bold">Relevant course work:</span><br>
-            <a href="https://catalog.unomaha.edu/search/?search=CYBR+4540" target="_blank" class="underline">
-                Computer Security Management</a>,
-            <a href="https://catalog.unomaha.edu/search/?search=CYBR+4430" target="_blank" class="underline">
-                Quantum Computing and Cryptography</a>,
-            <a href="https://catalog.unomaha.edu/search/?search=CSCI+1620" target="_blank" class="underline">
-                Computer Science 1 & 2 (Python)</a>,
-            <a href="https://catalog.unomaha.edu/search/?search=CSCI+4650" target="_blank" class="underline">
-                Introduction to Cloud Computing</a>,
-            <a href="https://catalog.unomaha.edu/search/?search=MATH+4560" target="_blank" class="underline">
-                Number Theory & Cryptography</a>
-        </p>
-    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Professional Experience</h2>
+
+    <h3 class="text-3xl font-semibold tracking-tight text-balance">Union Pacific Railroad, Omaha, Ne<h3>
+    <span class="text-xl font-normal ">Technology Intern</span><br>
+    <span class="text-sm font-normal text-gray-400">June 2024 - Dec 2025</span>
+    <ul>
+        <li>
+            Updated unmaintained projects and tools into current company standards & systems
+        </li>
+        <li>
+            Automated various tasks to replace manual work
+        </li>
+        <li>
+            Developed end user facing applications to improve asset tracking
+        </li>
+        <li>
+            Identified problems & solutions on end user and test devices and for server applications
+        </li>
+        <li>
+            Improved my team’s internal documentation by clarifying and adding details where necessary
+        </li>
+    </ul>
+
+    <h3 class="text-3xl font-semibold tracking-tight text-balance">University of Nebraska Omaha, Omaha, Ne<h3>
+    <span class="text-xl font-normal ">Teacher Assistant for Computer Science 2: Tutor & Grader</span><br>
+    <span class="text-sm font-normal text-gray-400">Aug 2023 - Dec 2025</span>
+    <ul>
+        <li>
+            Assisted students in improving their problem solving skills and understanding of Python
+        </li>
+        <li>
+            Participated in activities to improve my tutoring and conflict resolution skills
+        </li>
+        <li>
+            Developed tooling to accurately, consistently, and quickly grade student coding assignments
+        </li>
+    </ul>
+
+    <h3 class="text-3xl font-semibold tracking-tight text-balance">University of Nebraska Omaha, Omaha, Ne<h3>
+    <span class="text-xl font-normal ">Student Assistant at the Creative Production Lab</span><br>
+    <span class="text-sm font-normal text-gray-400">Jan 2023 - July 2024</span>
+    <ul>
+        <li>
+            Helped students learn hand-on skills to complete their classwork and personal projects
+        </li>
+        <li>
+            Created public-facing application for UNO’s University Library
+        </li>
+        <li>
+            Developed and maintained complex Excel spreadsheets for tracking services and revenue
+        </li>
+    </ul>
+
+    <h3 class="text-3xl font-semibold tracking-tight text-balance">Gorat's Steakhouse, Omaha, Ne<h3>
+    <span class="text-xl font-normal">Lead Saute/Fry Station Cook &amp; Line Cook</span><br>
+    <span class="text-sm font-normal text-gray-400">Feb 2021 - Feb 2022</span>
+    <ul>
+        <li>
+            Communicated and lead effectively in a high stress, fast paced environment
+        </li>
+    </ul>
+
+    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance">Projects & extracurricular</h2>
     <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
-    <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">Union Pacific Railroad, Omaha, Ne<h3>
-        <span class="text-xl font-normal text-gray-300">Technology Intern</span><br>
-        <span class="text-sm font-normal text-gray-400">June 2024 - Dec 2025</span>
-    <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
-        <span class="text-xl font-normal text-gray-300">Teacher Assistant for Computer Science 2: Tutor & Grader</span><br>
-        <span class="text-sm font-normal text-gray-400">Aug 2023 - Dec 2025</span>
-    <h3 class="text-3xl font-semibold tracking-tight text-balance text-gray-300 sm:text-2xl">University of Nebraska Omaha, Omaha, Ne<h3>
-        <span class="text-xl font-normal text-gray-300">Student Assistant at the Creative Production Lab</span><br>
-        <span class="text-sm font-normal text-gray-400">Jan 2023 - July 2024</span>
-    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Projects & extracurricular</h2>
+
+    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance">Skills</h2>
     <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
-    <h2 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">Skills</h2>
-    <hr class="text-gray-600 mb-1 max-w-1/2 mx-auto">
+    <h3 class="text-gray-100 text-xl">Programming Languages</h3>
+    <p>Python | Bash | Powershell | SQL | Java | Rust</p>
+    <h3 class="text-gray-100 text-xl">Software &amp; Tools</h3>
+    <p>Linux | Git | RegEx | Selenium | NMap | WireShark | MS Office suite | Maven | SSH | Splunk</p>
+    <p>Caddy | Django | TailwindCSS | AWS | CI/CD Workflows (Github Actions) | Adobe suite</p>
 </div>
 {% endblock %}
 
