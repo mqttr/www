@@ -1,112 +1,21 @@
-
+{% extends 'base.html' %}
 {% load pygmentify_tags %}
 
 {% block add_css %}
     <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
 {% endblock %}
 
-<div class='md:max-w-max lg:max-w-4/5'>
-    <h1 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-        Projects
+{% block content %}
+<div class='md:max-w-max lg:max-w-3/5'>
+    <h1 class="text-center m-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
+        {% block project_title %}{% endblock %}
     </h1>
-    <p class="mt-10 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        This is a curated selection of my most favorite and prized projects to date. Of course, in no particular order, as how could I chose between them? While the specific code might not be
-        <a href="{{LINK.GITHUB}}" class="underline">open-sourced</a>
-        for all of these, feel free to 
-        <a href="mailto:{{ EMAIL.CONTACT }}?subject=Project%20Intrigue" class="underline">reach out to me</a>
-        and I would be happy to discuss any of my projects!
-    </p>
-    <h2 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">
-        Homelab
-    </h2>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        By far one of my most proud projects is my homelab. Currently running on an old Dell Optiplex in the corner of my room; it hosts a wide variety of open-source services and services written by yours truly, all containerized for easy transport. I even hosted some of my
-        <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">own OCI images on my self-hosted Forgejo instance</a>
-        for easier configuration! Now while I am quite a bit proud of a lot of these projects I got working, I am particularly proud of my 
-        <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">Forgejo</a> (with CI/CD workflows!),
-        <a href="{{LINK.DOMAIN}}" class="underline">this website you see here</a>,
-        my configuration for my OIDC provider (Pocket-ID - which I will not link, though I will happily discuss), and my proxied Minecraft server that I host for my friends and family (also not linked).
-    </p>
-    <h2 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">
-        Dotfiles
-    </h2>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        One of the things that I have been absolutely loving since moving to Linux away from Microsoft's operating system, is the motivation to write my own dotfiles.
-        It has required and enabled me to learn a lot about better options for the various software that I use daily. It's dramatically improved my quality of life and has been insanely fun.
-    </p>
-    <h2 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">
-        Grading Computer Science 2 Python Assignment via Python
-    </h2>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        While regrettably not open-source due to privacy and academic honesty concerns, I am still insanely proud of these series of Python scripts.
-    </p>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        These scripts were a fantastic and unique challenge.
-        More so, as these assignments were quite varied the challenges of grading each assignment was also equally as varied.
-        For most of these assignments, specific implementation details were not specified. This led to students also submitting difficult to test code programmatically.
-        So for these assignments, I usually resolved to observing behaviors of the students' code, testing the very breaking points of the code and usually compared to how the professor's reference program reacted. All other things that I couldn't programmatically test in this way, I would have to read the student's submission.
-    </p>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        However, for some of the later assignments, as the specific implementation and function details were more defined in the assignment instructions, I wanted to see if I could test the implementation details of a students code using Python, as opposed to reading and parsing the student's submission manually.
-    </p>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        This led me to create such <span class="line-through">cursed</span> beautiful tests similar to the one below.
-    </p>
-
-    {% pygmentify 'monokai' %}
-        <pre class="python mt-5 mb-5 bg-gray-800 p-5 pt-2 pb-2">
-def test_bound_harcoded(self):
-    try:
-        for name in ('MAX_VOLUME', 'max_volume'):
-            if getattr(sut, name, None) is not None: setattr(sut, name, 5)
-        tv = sut()
-        tv.power()
-        assert_state(tv, True, 0, 0)
-        tv.volume_up()
-        assert_state(tv, True, 0, 1)
-        tv.volume_up()
-        assert_state(tv, True, 0, 2)
-        tv.volume_up()
-        assert_state(tv, True, 0, 3)
-        tv.volume_up()
-        assert_state(tv, True, 0, 4)
-        tv.volume_up()
-        assert_state(tv, True, 0, 5)
-        tv.volume_up()
-        assert_state(tv, True, 0, 5)
-    except Exception as e:
-        raise e
-    finally:
-        for name in ('MAX_VOLUME', 'max_volume'):
-            if getattr(sut, name, None) is not None: setattr(sut, name, 2)
-        </pre>
-    {% endpygmentify %}
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        Plus, because of the <span class="line-through">weird</span> awesome quirks of Python. We can get the docstrings and type annotations of functions and objects programmatically at runtime:
-    </p>
-        {% pygmentify 'monokai' %}
-        <pre class="python mt-5 mb-5 bg-gray-800 p-5 pt-2 pb-2">
-assert typing.get_type_hints(sut.mute).get('return', None) is None
-assert sut.__annotations__.get('MIN_CHANNEL', None) is None
-        </pre>
-        {% endpygmentify %}
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        And we can even check for visibility (even for private variables) using Python's
-        <a href="https://www.geeksforgeeks.org/python/name-mangling-in-python/" class="underline">
-            variable name mangling</a>.
-    </p>
-    {% pygmentify 'monokai' %}
-        <pre class="python mt-5 mb-5 bg-gray-800 p-5 pt-2 pb-2">
-assert any(getattr(tv, name, None) is not None for name in ('_Television__status', '_status'))
-assert all(getattr(tv, name, None) is None for name in ('status'))
-        </pre>
-    {% endpygmentify %}
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-        I would say all of the above snippets of code are pretty bad practice in real world uses. Test suites generally should <span class="italic">not</span> check how something gets done, but that it does. However, because of this specific use case of needing to verify how the code works, like checking for hard-coded values, annotations, docstrings, and visibility, I am not sure of any other way of solving this.
-    </p>
-    <h2 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">
-        Automate Application Installation Troubleshooting
-    </h2>
-    <p class="mt-5 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">
-    </p>
+    <hr class="border-gray-300">
+    <div class="text-center">
+        <h2 class="text-md text-gray-400 mb-3">{% block project_date %}{% endblock %} | {% block project_domain %}{% endblock %}</h2>
+    </div>
+    {% block project_body %}
+    {% endblock %}
 </div>
+{% endblock %}
+

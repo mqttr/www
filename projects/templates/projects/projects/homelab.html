@@ -1,0 +1,22 @@
+{% extends 'projects/base.html' %}
+{% load pygmentify_tags %}
+
+{% block title %}Homelab{% endblock %}
+
+{% block project_title %}Homelab{% endblock %}
+{% block project_date %}Aug 2025 - Current{% endblock %}
+{% block project_domain %}Personal{% endblock %}
+
+{% block project_body %}
+<p class="mt-5 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+    By far one of my most proud projects is my homelab. Currently running on an old Dell Optiplex in the corner of my room; it hosts a wide variety of open-source services and services written by yours truly, all containerized for easy transport. I even hosted some of my
+    <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">own OCI images on my self-hosted Forgejo instance</a>
+    for easier configuration! Now while I am quite a bit proud of a lot of these projects I got working, I am particularly proud of my 
+    <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">Forgejo</a> (with CI/CD workflows!),
+    <a href="{{LINK.DOMAIN}}" class="underline">this website you see here</a>,
+    my configuration for my OIDC provider (Pocket-ID - which I will not link, though I will happily discuss), and my proxied Minecraft server that I host for my friends and family (also not linked).
+</p>
+
+
+{% endblock %}
+
