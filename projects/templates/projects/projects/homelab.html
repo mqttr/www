@@ -8,15 +8,62 @@
 {% block project_domain %}Personal{% endblock %}
 
 {% block project_body %}
-<p class="mt-5 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
-    By far one of my most proud projects is my homelab. Currently running on an old Dell Optiplex in the corner of my room; it hosts a wide variety of open-source services and services written by yours truly, all containerized for easy transport. I even hosted some of my
-    <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">own OCI images on my self-hosted Forgejo instance</a>
-    for easier configuration! Now while I am quite a bit proud of a lot of these projects I got working, I am particularly proud of my 
-    <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline">Forgejo</a> (with CI/CD workflows!),
-    <a href="{{LINK.DOMAIN}}" class="underline">this website you see here</a>,
-    my configuration for my OIDC provider (Pocket-ID - which I will not link, though I will happily discuss), and my proxied Minecraft server that I host for my friends and family (also not linked).
+<p class="mt-5 text-lg font-medium text-pretty sm:text-xl/8">
+    By far among the projects that I am most happy with and proud of is my homelab.
+    All of the services listed below are running on an Old Dell Optiplex in the corner of my room.
+    It uses a
+    <a href="https://security.stackexchange.com/questions/169642/is-docker-more-secure-than-vms-or-bare-metal" class="underline" target="_blank">hardened</a>
+    Docker Compose set up.
+    It is designed in such a way where I can copy the files over from that machine to almost any other machine and host my entire homelab from that new device seamlessly.
 </p>
-
-
+<h2 class="text-3xl text-gray-200 mt-5">Services</h2>
+<ul class="text-2xl list-disc m-5">
+    <li>
+        Caddy
+        <span class="text-gray-600 text-xl">(<a href="https://caddyserver.com/" class="underline" target="_blank">reference</a>)</span>
+        <ul class="text-xl list-disc ml-5 text-gray-400">
+            <li>
+                using <a href="https://www.cloudflare.com/" class="underline" target="_blank">Cloudflare</a> &amp;
+                <a href="https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/" class="underline" target="_blank">Cloudflared tunnel</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        pocket-id
+        <span class="text-gray-600 text-xl">
+            (<a href="https://github.com/pocket-id/pocket-id" class="underline" target="_blank">reference</a>)
+        </span>
+        <ul class="text-xl list-disc ml-5 text-gray-400">
+            <li>
+                unifies login management among unrelated services
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}" class="underline" target="_blank">Forgejo</a>
+        <span class="text-gray-600 text-xl">
+            (<a href="https://forgejo.org/" class="underline" target="_blank">reference</a>)
+        </span>
+        <ul class="text-xl list-disc ml-5 text-gray-400">
+            <li>
+                supports pushing via SSH over a
+                <a href="https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/" class="underline" target="_blank">Cloudflared</a>
+                tunnel
+            </li>
+            <li>
+                hosts
+                <a href="https://opencontainers.org/" class="underline" target="_blank">OCI</a>
+                images including the one for
+                <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}/mqttr/www/packages" class="underline" target="_blank">this website</a>
+            </li>
+            <li>
+                <a href="{{LINK.SELFHOSTED.VERSION_CONTROL_SYSTEM}}/actions/oci-registry-push" class="underline" target="_blank">automatically builds OCI images</a>
+                using
+                <a href="https://forgejo.org/docs/next/user/actions/" class="underline" target="_blank">Forgejo Actions</a>
+                on tag and branch pushes
+            </li>
+        </ul>
+    </li>
+</ul>
 {% endblock %}
 

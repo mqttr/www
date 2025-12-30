@@ -1,8 +1,18 @@
-<h2 class="text-center mt-4 text-4xl font-semibold tracking-tight text-balance text-gray-300 sm:text-4xl">
-    Dotfiles
-</h2>
-<p class="mt-5 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+{% extends 'projects/base.html' %}
+{% load pygmentify_tags %}
+
+{% block title %}Dotfiles - WIP{% endblock %}
+
+{% block project_title %}dotfiles - WIP{% endblock %}
+{% block project_date %}Dec 2022 - Current{% endblock %}
+{% block project_domain %}Personal{% endblock %}
+
+{% block project_body %}
+<p class="text-lg">
     One of the things that I have been absolutely loving since moving to Linux away from Microsoft's operating system, is the motivation to write my own dotfiles.
     It has required and enabled me to learn a lot about better options for the various software that I use daily. It's dramatically improved my quality of life and has been insanely fun.
+    <br>
+    This is still a work in progress. Unfortunately, due to uncertainties with how my dotfiles are set up I have not opensourced them just yet.
 </p>
+{% endblock %}
 
