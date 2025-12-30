@@ -22,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-tiu$t*)cnqex7s_k0^bvs=9m_v)rr2dt-ikoupzd5ok=&)vqa0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
+DEBUG: bool = os.environ.get('DEBUG', 'false').lower() == 'true'
 
+ALLOWED_HOSTS: list[str] = []
 if domain := os.environ.get('DOMAIN'):
-    ALLOWED_HOSTS = [domain]
-else:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+    ALLOWED_HOSTS.append(domain)
+if DEBUG:
+    ALLOWED_HOSTS.extend(['localhost', '127.0.0.1'])
 
 
 # Application definition
