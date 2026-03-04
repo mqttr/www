@@ -78,7 +78,7 @@ assert all(getattr(tv, name, None) is None for name in ('status'))
 {% endpygmentify %}
 
 <p class="mt-5 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
-    I would say all of the above snippets of code are pretty bad practice in real world uses. Test suites generally should <span class="italic">not</span> check how something gets done, but that it does. However, because of this specific use case of needing to verify how the code works, like checking for hard-coded values, annotations, docstrings, and visibility, I am not sure of any other way of solving this.
+    I would say all of the above snippets of code are pretty bad practice in real world uses. Test suites generally should <i>not</i> check how something gets done, but that it does. However, because of this specific use case of needing to verify how the code works, like checking for hard-coded values, annotations, docstrings, and visibility, I am not sure of any other way of solving this. <i>Of course</i>, one could parse the student's python files, but forcing Python to do it was <i>substantially</i> easier.
 </p>
 
 {% endblock %}
