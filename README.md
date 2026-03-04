@@ -9,9 +9,7 @@ Use either:
 ```shell
 DEBUG=true py manage.py tailwind dev
 ```
-
-or
-
+Or, the **much** slower option (but dependencies are handled for you):
 ```shell
 DEBUG=true docker compose up -d --build
 ```
