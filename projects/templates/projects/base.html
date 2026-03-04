@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
+{% load component_tags %}
 {% load pygmentify_tags %}
 
-{% block add_css %}
+{% block additional_css %}
     <link rel="stylesheet" href="{% pygmentify_css 'monokai' %}">
+{% endblock %}
+
+{% block banner %}
+    {% component "wip" / %}
 {% endblock %}
 
 {% block content %}
 <div class='md:max-w-max lg:max-w-3/5 text-gray-300'>
     <h1 class="text-center m-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
-        {% block project_title %}{% endblock %}
+        {% block project_title %}Untitled Project{% endblock %}
     </h1>
     <hr class="border-gray-300">
     <div class="text-center">
-        <h2 class="text-md text-gray-400 mb-3">{% block project_date %}{% endblock %} | {% block project_domain %}{% endblock %}</h2>
+        <h2 class="text-md text-gray-400 mb-3">
+            {% block project_date %}01/01/1970 - 01/19/2038{% endblock %} | {% block project_domain %}Unlisted Domain{% endblock %}
+        </h2>
     </div>
     {% block project_body %}
+        <p class="mt-5 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+            {% lorem 5 p %}
+        </p>
     {% endblock %}
 </div>
 {% endblock %}

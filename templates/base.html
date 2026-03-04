@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 <html lang='en' class="h-full min-h-full">
     <head>
-        <title>{% block title %}CHANGE ME{% endblock %}</title>
+        <title>{% block title %}Untitled Page{% endblock %}</title>
         <meta charset="UTF-8" >
         {% tailwind_css %}
-        {% block add_css %}{% endblock %}
+        {% block additional_css %}{% endblock %}
     </head>
     <body class="bg-gray-900 flex flex-col h-screen justify-between">
         {% component "header" / %}
+        {% block banner %}{% endblock %}
         <main role="main" class="grid min-h-fit place-items-center py-15">
             {% block content %}
             <div class="text-center">
-                <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">CHANGE ME</h1>
+                <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Untitled Page</h1>
             </div>
             {% endblock %}
         </main>
