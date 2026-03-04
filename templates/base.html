@@ -1,20 +1,20 @@
 {% load static tailwind_tags %}
 {% load component_tags %}
 <!DOCTYPE html>
-<html lang='en' class="h-full min-h-full">
+<html lang='en'>
     <head>
         <title>{% block title %}Untitled Page{% endblock %}</title>
         <meta charset="UTF-8" >
         {% tailwind_css %}
         {% block additional_css %}{% endblock %}
     </head>
-    <body class="bg-gray-900 flex flex-col h-screen justify-between">
+    <body class="bg-gray-900">
         {% component "header" / %}
         {% block banner %}{% endblock %}
-        <main role="main" class="grid min-h-fit place-items-center py-15">
+        <main role="main" class="w-full grid items-center place-items-center my-20">
             {% block content %}
             <div class="text-center">
-                <h1 class="mt-4 text-4xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Untitled Page</h1>
+                <h1 class="mt-4 text-4xl font-semibold text-balance text-white sm:text-7xl">Untitled Page</h1>
             </div>
             {% endblock %}
         </main>
